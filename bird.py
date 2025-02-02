@@ -2,7 +2,7 @@ import pygame as pg
 
 from setting import *
 
-class Bird:
+class Bird(pg.sprite.Sprite):
     def __init__(self):
         super().__init__()
 
@@ -15,7 +15,7 @@ class Bird:
     def update(self):
         self.velocity_y += self.gravity
         if pg.mouse.get_pressed()[0]:
-            self.velocity_y = -10
+            self.velocity_y = -5
         self.rect.y += self.velocity_y
 
     def draw(self,screen):
